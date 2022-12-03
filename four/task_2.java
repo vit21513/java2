@@ -21,12 +21,13 @@ public class task_2 {
         }
         System.out.println("Список до сортировки");
         System.out.println(list_num + "\n");
-        enqueue(list_num, 10);                   //помещаем элемент в конец очереди,
+        System.out.println("Список после добавления элемента");
+        enqueue(list_num, 999);                   //помещаем элемент в конец очереди,
         System.out.println(list_num+ "\n");
-
+        System.out.println("возвращаем первый элемент из очереди и удаляем его");
         System.out.println(dequeue(list_num));     // возвращаем первый элемент из очереди и удаляем его
         System.out.println(list_num+ "\n");
-        
+        System.out.println("возвращаем первый элемент из очереди, не удаляя его");
         System.out.println(first(list_num));         // возвращаем первый элемент из очереди, не удаляя его
         System.out.println(list_num);
 
