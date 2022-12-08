@@ -34,7 +34,7 @@ public class task_2 {
                 }, LinkedHashMap::new));
 
         sortedMap.forEach((k, v) -> {
-            if (sortedMap.get(k) > 1) { // для вывода только вторяющихся имен т.е больше 1го
+            if (sortedMap.get(k) > 1) { // для вывода только повторяющихся имен т.е больше 1го
                 System.out.printf("%s: %s%n", k, v);
             }
         });
