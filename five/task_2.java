@@ -31,14 +31,15 @@ public class task_2 {
         Map<String, Integer> sortedMap = name.entrySet().stream().sorted(Comparator.comparingInt(e -> -e.getValue()))
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (a, b) -> {
                     throw new AssertionError();
-                }, LinkedHashMap::new));
+                },
+                        LinkedHashMap::new));
 
-        sortedMap.forEach((k, v) -> {
-            if (sortedMap.get(k) > 1) { // для вывода только повторяющихся имен т.е больше 1го
-                System.out.printf("%s: %s%n", k, v);
-            }
-        });
-
-    }
-
-}
+                        sortedMap.forEach((k, v) -> {
+                            if (sortedMap.get(k) > 1) { // для вывода только повторяющихся имен т.е больше 1го
+                                System.out.printf("%s: %s%n", k, v);
+                            }
+                        });
+                
+                    }
+                
+                }
