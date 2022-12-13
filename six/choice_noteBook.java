@@ -68,7 +68,7 @@ try {
             case 2:
                 System.out.println("Введите  минимальный размер оперативной памяти");
                 int minR = reader.nextInt();
-                System.out.println("Введите  макимальный  размер оперативной памяти");
+                System.out.println("Введите  макcимальный  размер оперативной памяти");
                 int maxR = reader.nextInt();
                 reader.close();
                 System.out.println(" ");
@@ -95,7 +95,7 @@ try {
                 return;
         }
     } catch (InputMismatchException e) {
-        System.out.printf("Некоректный выбор");}
+    System.out.printf("Некоректный выбор");}
     }
 
     public static void choose_ram(Set<notebook> nouts, int st, int en) {

@@ -38,6 +38,11 @@ public class notebook {
 
     public static Set<notebook> find_res_HDD(Set<notebook> nouts, int start, int end) {
         Set<notebook> nouts_res = new HashSet<>();
+        int temp = start;
+        if (start > end) {
+            start=end;
+            end =temp;
+        }
         for (notebook i : nouts) {
             if (i.capacity_hdd >= start && i.capacity_hdd <= end) {
                 nouts_res.add(i);
@@ -49,7 +54,11 @@ public class notebook {
 
     public static Set<notebook> find_res_ram(Set<notebook> nouts, int start, int end) {
         Set<notebook> nouts_res = new HashSet<>();
-
+        int temp =start;
+        if (start > end) {
+            start=end;
+            end =temp;
+        }
         for (notebook i : nouts) {
             if (i.ram >= start && i.ram <= end) {
                 nouts_res.add(i);
