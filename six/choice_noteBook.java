@@ -15,7 +15,6 @@
 // Создать множество ноутбуков (множество объектов класса ноутбук).
 // 3-10 штук
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
@@ -34,8 +33,8 @@ public class choice_noteBook {
         notebook nout8 = new notebook(8, "Toshiba", "Tot5RT", 4, 128, "Dos", "Brown");
         notebook nout9 = new notebook(9, "Pocetbook", "Af56", 2, 64, "Dos", "Brown");
 
-        // notebook[] nouts1 = new notebook[8]; //{ nout1, nout2, nout3, nout4, nout5,
-        // nout6, nout7, nout8, nout9 }; Set<Integer> set = new HashSet<>();
+        
+      
         Set<notebook> nouts = new HashSet<>();
         nouts.add(nout1);
         nouts.add(nout2);
