@@ -15,7 +15,9 @@
 // Создать множество ноутбуков (множество объектов класса ноутбук).
 // 3-10 штук
 
+import java.io.IOException;
 import java.util.HashSet;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -45,7 +47,7 @@ public class choice_noteBook {
         nouts.add(nout7);
         nouts.add(nout8);
         nouts.add(nout9);
-
+try {
         System.out.println("выбор ноутбука по критериям");
         System.out.println(
                 "Введите  число, отбор :\n по обьему жесткогого диска-1\n по объему оперативной памяти- 2\n по операционной системе-3\n по цвету корпуса -4\n");
@@ -92,7 +94,8 @@ public class choice_noteBook {
                 reader.close();
                 return;
         }
-
+    } catch (InputMismatchException e) {
+        System.out.printf("Некоректный выбор");}
     }
 
     public static void choose_ram(Set<notebook> nouts, int st, int en) {
