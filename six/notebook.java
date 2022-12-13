@@ -1,5 +1,7 @@
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class notebook {
 
@@ -35,50 +37,49 @@ public class notebook {
 
     }
 
-    public static ArrayList<Integer> find_res_HDD(notebook[] nout, int start, int end) {
-        ArrayList<Integer> list_num = new ArrayList<>();
-
-        for (notebook i : nout) {
-
+    public static Set<notebook> find_res_HDD(Set<notebook> nouts, int start, int end) {
+        Set<notebook> nouts_res = new HashSet<>();
+        for (notebook i : nouts) {
             if (i.capacity_hdd >= start && i.capacity_hdd <= end) {
-                list_num.add(i.id);
+                nouts_res.add(i);
             }
+
         }
-        return list_num;
+        return nouts_res;
     }
 
-    public static ArrayList<Integer> find_res_ram(notebook[] nout, int start, int end) {
-        ArrayList<Integer> list_num = new ArrayList<>();
+    public static Set<notebook> find_res_ram(Set<notebook> nouts, int start, int end) {
+        Set<notebook> nouts_res = new HashSet<>();
 
-        for (notebook i : nout) {
+        for (notebook i : nouts) {
             if (i.ram >= start && i.ram <= end) {
-                list_num.add(i.id);
+                nouts_res.add(i);
             }
         }
-        return list_num;
+        return nouts_res;
     }
 
-    public static ArrayList<Integer> find_res_os(notebook[] nout, String text) {
-        ArrayList<Integer> list_num = new ArrayList<>();
+    public static Set<notebook> find_res_os(Set<notebook> nouts, String text) {
+        Set<notebook> nouts_res = new HashSet<>();
 
-        for (notebook i : nout) {
+        for (notebook i : nouts) {
             if (i.os == text) {
-                list_num.add(i.id);
+                nouts_res.add(i);
             }
         }
-        return list_num;
+        return nouts_res;
 
     }
 
-    public static ArrayList<Integer> find_res_color(notebook[] nout, String text) {
-        ArrayList<Integer> list_num = new ArrayList<>();
+    public static Set<notebook> find_res_color(Set<notebook> nouts, String text) {
+        Set<notebook> nouts_res = new HashSet<>();
 
-        for (notebook i : nout) {
+        for (notebook i : nouts) {
             if (i.color == text) {
-                list_num.add(i.id);
+                nouts_res.add(i);
             }
         }
-        return list_num;
+        return nouts_res;
 
     }
 }

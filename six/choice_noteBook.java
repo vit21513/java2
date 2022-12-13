@@ -16,7 +16,9 @@
 // 3-10 штук
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class choice_noteBook {
 
@@ -32,7 +34,18 @@ public class choice_noteBook {
         notebook nout8 = new notebook(8, "Toshiba", "Tot5RT", 4, 128, "Dos", "Brown");
         notebook nout9 = new notebook(9, "Pocetbook", "Af56", 2, 64, "Dos", "Brown");
 
-        notebook[] nouts = new notebook[] { nout1, nout2, nout3, nout4, nout5, nout6, nout7, nout8, nout9 };
+        // notebook[] nouts1 = new notebook[8]; //{ nout1, nout2, nout3, nout4, nout5,
+        // nout6, nout7, nout8, nout9 }; Set<Integer> set = new HashSet<>();
+        Set<notebook> nouts = new HashSet<>();
+        nouts.add(nout1);
+        nouts.add(nout2);
+        nouts.add(nout3);
+        nouts.add(nout4);
+        nouts.add(nout5);
+        nouts.add(nout6);
+        nouts.add(nout7);
+        nouts.add(nout8);
+        nouts.add(nout9);
 
         System.out.println("выбор ноутбука по критериям");
         System.out.println(
@@ -83,26 +96,26 @@ public class choice_noteBook {
 
     }
 
-    public static void choose_ram(notebook nonbook[], int st, int en) {
+    public static void choose_ram(Set<notebook> nouts, int st, int en) {
 
         System.out.printf("Отобраны ноутбуки с размером памяти от %d Gb до %d Gb\n", st, en);
-        ArrayList<Integer> res_ram = new ArrayList<>(notebook.find_res_ram(nonbook, st, en));
-        for (Integer i : res_ram) {
-            System.out.println(nonbook[i - 1].toString());
+        Set<notebook> res_ram = new HashSet<>(notebook.find_res_ram(nouts, st, en));
+        for (notebook i : res_ram) {
+            System.out.println(i.toString());
         }
     }
 
-    public static void choose_hdd(notebook nonbook[], int st, int en) {
+    public static void choose_hdd(Set<notebook> nouts, int st, int en) {
 
         System.out.printf("Отобраны ноутбуки с размером жесткого диска от %d Gb до %d Gb\n", st, en);
 
-        ArrayList<Integer> res_hdd = new ArrayList<>(notebook.find_res_HDD(nonbook, st, en));
-        for (Integer i : res_hdd) {
-            System.out.println(nonbook[i - 1].toString());
+        Set<notebook> res_hdd = new HashSet<>(notebook.find_res_HDD(nouts, st, en));
+        for (notebook i : res_hdd) {
+            System.out.println(i.toString());
         }
     }
 
-    public static void choose_oss(notebook nonbook[], int os) {
+    public static void choose_oss(Set<notebook> nouts, int os) {
 
         String Oska = "";
         switch (os) {
@@ -124,13 +137,13 @@ public class choice_noteBook {
         }
 
         System.out.printf("Отобраны ноутбуки с операционной системой %s\n", Oska);
-        ArrayList<Integer> res_oss = new ArrayList<>(notebook.find_res_os(nonbook, Oska));
-        for (Integer i : res_oss) {
-            System.out.println(nonbook[i - 1].toString());
+        Set<notebook> res_oss = new HashSet<>(notebook.find_res_os(nouts, Oska));
+        for (notebook i : res_oss) {
+            System.out.println(i.toString());
         }
     }
 
-    public static void choose_color(notebook nonbook[], int col) {
+    public static void choose_color(Set<notebook> nouts, int col) {
 
         String color_book = "";
         switch (col) {
@@ -152,9 +165,9 @@ public class choice_noteBook {
         }
 
         System.out.printf("Отобраны ноутбуки с цветом корпуса  %s\n", color_book);
-        ArrayList<Integer> res_col = new ArrayList<>(notebook.find_res_color(nonbook, color_book));
-        for (Integer i : res_col) {
-            System.out.println(nonbook[i - 1].toString());
+        Set<notebook> res_col = new HashSet<>(notebook.find_res_color(nouts, color_book));
+        for (notebook i : res_col) {
+            System.out.println(i.toString());
         }
     }
 
